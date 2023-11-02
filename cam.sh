@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start http-server in the background and capture the output (link)
-link=$(http-server -p 3333 )
+link=$(http-server -p 3333 -c-1 2>/dev/null & echo $!)
 
 # Check if the http-server started successfully
 if [[ $? -eq 0 ]]; then
@@ -12,4 +12,3 @@ if [[ $? -eq 0 ]]; then
 else
     echo "Failed to start the server"
 fi
-
