@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start http-server in the background and capture the output (link)
-link=$(http-server -p 3333 -c-1 -s & echo $!)
+link=$(http-server -p 3333 )
 
 # Check if the http-server started successfully
 if [[ $? -eq 0 ]]; then
