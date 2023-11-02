@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Camera and Microphone Access</title>
+</head>
+<body>
+    <h1>Camera and Microphone Access Example</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+    <audio id="audio" controls></audio>
+
+    <script>
+        // Get the video and audio elements
+        const video = document.getElementById('video');
+        const audio = document.getElementById('audio');
+
+        // Check if the browser supports getUserMedia
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+                .then(function(stream) {
+                    // Set the video and audio sources to the camera and microphone streams
+                    video.srcObject = stream;
+                    audio.srcObject = stream;
+                })
+                .catch(function(error) {
+                    console.error('Error accessing the camera and microphone: ', error);
+                });
+        } else {
+            console.error('getUserMedia is not supported in this browser');
+        }
+    </script>
+</body>
+</html>
