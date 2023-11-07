@@ -1,4 +1,8 @@
 #!/bin/bash
+banner(){
+❤❤❤❤❤❤❤❤
+
+}
 
 # Start http-server in the background and capture the output (link
 catch_ip() {
